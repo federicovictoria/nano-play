@@ -1,18 +1,26 @@
 
+:root {
+    --bg-color: #1e2226;
+    --acent-colot: #70cecd;
+}
+
 @font-face {
     font-family: 'Inter';
     src: url(../assets/fonts/Inter-VariableFont_opsz\,wght.ttf) ;
 }
+
 
 * {
     font-family: 'Inter', sans-serif;    
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* quitar toda interaccion de seleccion */
+    user-select: none;
 }
 
 body {
-    background-color: #1e2226;
+    background-color: var(--bg-color);
     color: #fdfffe;
 }
 
@@ -35,8 +43,82 @@ body {
 }
 
 .home-hero {
-    height: 250px;
+    margin: 75px 0;
+    padding: 8px 16px;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
+
+.text-content {
+    max-width: 600px;
+    padding: 12px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    height: 100%;
+}
+.text-content h2 {
+    margin: 12px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.text-content p {
+    margin: 12px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.hero-button {
+    display: flex;
+    gap: 12px;
+}
+.hero-button button {
+    padding: 8px 16px;
+    background-color: var(--acent-colot);
+    color: var(--bg-color);
+    border: 1px solid var(--acent-colot);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out,
+      transform 0.3s ease-in-out;
+}
+.hero-button button:hover {
+    box-shadow: 
+    0 0 5px var(--acent-colot),
+    0 0 10px var(--acent-colot);
+    transform: scale(1.05);
+}
+
+.hero-button a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px 16px;
+    background-color: var(--bg-color);
+    color: var(--acent-colot);
+    border: 2px solid var(--acent-colot);
+    border-radius: 4px;
+    transition: box-shadow 0.3s ease-in-out,
+      background-color 0.3s ease-in-out,
+      color 0.3s ease-in-out,
+      transform 0.3s ease-in-out;
+}
+.hero-button a:hover {
+    background-color: var(--acent-colot);
+    color: var(--bg-color);
+    box-shadow: 
+    0 0 5px var(--acent-colot),
+    0 0 10px var(--acent-colot);
+    transform: scale(1.05);
+}
+
+.hero-card {
+    max-width: 240px;
+}
+
 
 a img {
     width: 32px;
@@ -44,9 +126,60 @@ a img {
 }
 
 .home-section-galery {
-    /*max-width: 960px;
-    margin: 0 auto;*/
+    margin: 0 20px;
     display: grid;
-    grid-template-columns: repeat(5, 240px);
+    grid-template-columns: repeat(4, 260px);
     grid-template-rows: repeat(1, minmax(280px, 280px));
+    gap: 40px;
+}
+
+.home-card {
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: 2px solid #70cecd;
+    transition: box-shadow 0.3s ease-in-out,
+      transform 0.3s ease-in-out;
+      
+}
+
+
+.home-card img {
+    width: 100%;
+    height: 125px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.home-card h3 {
+    margin: 0 24px;
+}
+.home-card p {
+    margin: 0 24px 12px;
+    font-size: 14px;
+}
+
+.home-card button {
+    margin: 0 24px 12px ;
+    padding: 8px 16px;
+    background-color: var(--bg-color);
+    color: #fdfffe;
+    border: 1px solid var(--acent-colot);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out,
+      color 0.3s ease-in-out,
+      box-shadow 0.3s ease-in-out,
+      transform 0.3s ease-in-out;
+}
+
+.home-card button:hover {
+    color: var(--bg-color);
+    background-color: var(--acent-colot);
+    transform: scale(1.05);
+    box-shadow: 
+    0 0 5px var(--acent-colot),
+    0 0 10px var(--acent-colot);
 }
