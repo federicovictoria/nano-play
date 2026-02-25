@@ -1,185 +1,176 @@
 
-:root {
-    --bg-color: #1e2226;
-    --acent-colot: #70cecd;
-}
-
 @font-face {
     font-family: 'Inter';
-    src: url(../assets/fonts/Inter-VariableFont_opsz\,wght.ttf) ;
+    src: url('../assets/fonts/Inter-VariableFont_opsz\,wght.ttf')
+        format('truetype');
+}
+
+:root {
+    --bg-color: #191c23;
+    --text-color: #dfe2e7;
+    --assent-color: #3bd1cf;
 }
 
 
 * {
-    font-family: 'Inter', sans-serif;    
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    /* quitar toda interaccion de seleccion */
-    user-select: none;
+    font-family: 'Inter', sans-serif;
 }
 
 body {
     background-color: var(--bg-color);
-    color: #fdfffe;
+    color: var(--text-color);
 }
 
-.home-view {
-    max-width: 1200px;
-    margin: 0 auto ;
+#app {
+    margin: 0 auto;
+    min-width: 1200px;
+    max-width: 1440px;
+    user-select: none;
 }
 
 .home-header {
-    padding: 24px 0;
+    height: 80px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    height: 40px;
+    justify-content: space-between;
+    padding: 24px 32px;
+}
+.home-header div {
+    display: flex;
+    align-items: center;
     gap: 12px;
+}
+.logo {
+    width: 32px;
+    height: 32px;
+}
+.logo-text {
+    font-size: 22px;
+    font-weight: 600;
+}
+.github-link {
+    height: 40px;
+    padding: 0 20px;
+}
+
+.github-link img {
+    width: 20px;
+    height: 20px;
 }
 
 .home-content {
-    margin: 25px 0;
+    margin-top: 64px;
 }
 
 .home-hero {
-    margin: 75px 0;
-    padding: 8px 16px;
-    height: 280px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.text-content {
     max-width: 600px;
-    padding: 12px 24px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
-    height: 100%;
+    gap: 16px;
+    margin-bottom: 48px;
 }
-.text-content h2 {
-    margin: 12px;
-    font-size: 32px;
-    font-weight: 700;
+.home-hero h2 {
+    font-size: 48px;
+    font-weight: 600;
 }
-
-.text-content p {
-    margin: 12px;
-    font-size: 16px;
-    font-weight: 400;
+.home-hero p {
+    font-size: 18px;
+    color: #a0a4ab;
 }
 
-.hero-button {
-    display: flex;
-    gap: 12px;
-}
-.hero-button button {
-    padding: 8px 16px;
-    background-color: var(--acent-colot);
-    color: var(--bg-color);
-    border: 1px solid var(--acent-colot);
-    border-radius: 4px;
-    cursor: pointer;
-    transition: box-shadow 0.3s ease-in-out,
-      transform 0.3s ease-in-out;
-}
-.hero-button button:hover {
-    box-shadow: 
-    0 0 5px var(--acent-colot),
-    0 0 10px var(--acent-colot);
-    transform: scale(1.05);
-}
-
-.hero-button a {
-    display: inline-block;
-    text-decoration: none;
-    padding: 8px 16px;
-    background-color: var(--bg-color);
-    color: var(--acent-colot);
-    border: 2px solid var(--acent-colot);
-    border-radius: 4px;
-    transition: box-shadow 0.3s ease-in-out,
-      background-color 0.3s ease-in-out,
-      color 0.3s ease-in-out,
-      transform 0.3s ease-in-out;
-}
-.hero-button a:hover {
-    background-color: var(--acent-colot);
-    color: var(--bg-color);
-    box-shadow: 
-    0 0 5px var(--acent-colot),
-    0 0 10px var(--acent-colot);
-    transform: scale(1.05);
-}
-
-.hero-card {
-    max-width: 240px;
-}
-
-
-a img {
-    width: 32px;
-    height: 32px;    
-}
-
-.home-section-galery {
-    margin: 0 20px;
+.home-section-grid {
+    margin: 0 auto;
+    padding: 0 24px;
+    max-width: 1200px;
     display: grid;
-    grid-template-columns: repeat(4, 260px);
-    grid-template-rows: repeat(1, minmax(280px, 280px));
-    gap: 40px;
+    grid-template-columns: repeat(4, minmax(280px, 290px));
+    grid-template-rows: repeat(1, minmax(320px, 340px));
+    gap: 32px;
 }
 
 .home-card {
-    background-color: var(--bg-color);
+    background-color: #21262e;
     border-radius: 8px;
+    padding: 24px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    border: 2px solid #70cecd;
-    transition: box-shadow 0.3s ease-in-out,
-      transform 0.3s ease-in-out;
-      
+    align-items: center;
+    gap: 16px;
 }
-
 
 .home-card img {
-    width: 100%;
-    height: 125px;
+    height: 180px;
     object-fit: cover;
-    border-radius: 4px;
 }
 
-.home-card h3 {
-    margin: 0 24px;
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
 }
-.home-card p {
-    margin: 0 24px 12px;
+.card-content h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.card-content button {
+    width: 72px;
     font-size: 14px;
-}
-
-.home-card button {
-    margin: 0 24px 12px ;
     padding: 8px 16px;
-    background-color: var(--bg-color);
-    color: #fdfffe;
-    border: 1px solid var(--acent-colot);
-    border-radius: 4px;
+    background-color: rgba(25, 28, 35, 0.8);
+    color: var(--text-color);
+    border: 1px solid var(--assent-color);
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out,
-      color 0.3s ease-in-out,
-      box-shadow 0.3s ease-in-out,
-      transform 0.3s ease-in-out;
+    transition: background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-.home-card button:hover {
+.card-content button:hover {
+    transform: scale(1.1);
     color: var(--bg-color);
-    background-color: var(--acent-colot);
-    transform: scale(1.05);
-    box-shadow: 
-    0 0 5px var(--acent-colot),
-    0 0 10px var(--acent-colot);
+    background-color: var(--assent-color);
+    box-shadow: 0 0 12px var(--assent-color);
+}
+
+.card-inactive {
+    border: 2px dashed #8d9095;
+    background-color: #21262e;
+    border-radius: 8px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    opacity: 0.5;
+}
+
+.card-inactive img {
+    height: 180px;
+}
+
+.card-inactive p {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+
+.home-footer {
+    font-size: 14px;
+    color: #a0a4ab;
+    margin: 48px 0;
+    display: flex;
+    gap: 32px;
+    justify-content: center;
 }
