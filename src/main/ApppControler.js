@@ -15,6 +15,9 @@ function render(view) {
     case 'home':
       app.innerHTML = HomwView();
       break;
+    case 'rps':
+      // rpsStart(app, globalState);
+      break;
     default:
       app.innerHTML = HomwView();
   }

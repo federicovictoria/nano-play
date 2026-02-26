@@ -32,11 +32,13 @@ body {
 }
 
 .home-header {
+    background-color: #21262e;
     height: 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 24px 32px;
+    border-radius: 16px;
 }
 .home-header div {
     display: flex;
@@ -61,18 +63,17 @@ body {
     height: 20px;
 }
 
-.home-content {
+/* .home-content {
     margin-top: 64px;
-}
+} */
 
 .home-hero {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 64px auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 16px;
-    margin-bottom: 48px;
 }
 .home-hero h2 {
     font-size: 48px;
@@ -84,7 +85,7 @@ body {
 }
 
 .home-section-grid {
-    margin: 0 auto;
+    margin-bottom: 96px;
     padding: 0 24px;
     max-width: 1200px;
     display: grid;
@@ -96,7 +97,7 @@ body {
 .home-card {
     background-color: #21262e;
     border-radius: 8px;
-    padding: 24px;
+    padding: 4px 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -104,6 +105,7 @@ body {
 }
 
 .home-card img {
+    width: 100%;
     height: 180px;
     object-fit: cover;
 }
@@ -125,7 +127,7 @@ body {
     width: 72px;
     font-size: 14px;
     padding: 8px 16px;
-    background-color: rgba(25, 28, 35, 0.8);
+    background-color: #3bd1cf46321;
     color: var(--text-color);
     border: 1px solid var(--assent-color);
     border-radius: 8px;
@@ -144,8 +146,8 @@ body {
 }
 
 .card-inactive {
-    border: 2px dashed #8d9095;
-    background-color: #21262e;
+    border: 2px dashed #8d909546;
+    background-color: #21262e46;
     border-radius: 8px;
     padding: 24px;
     display: flex;
@@ -156,21 +158,38 @@ body {
 }
 
 .card-inactive img {
-    height: 180px;
+    width: 180%;
+    height: 120px;
+    object-fit: contain;
+    opacity: 0.5;
 }
 
 .card-inactive p {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 600;
+    opacity: 0.5;
 }
 
 
-
+/* footer  */
 .home-footer {
+    background-color: #21262e;
+    padding: 24px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.home-footer p {
     font-size: 14px;
     color: #a0a4ab;
-    margin: 48px 0;
+}
+
+.social-links {
     display: flex;
-    gap: 32px;
-    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+.social-links img {
+    width: 100%;
+    height: 100%;
 }
