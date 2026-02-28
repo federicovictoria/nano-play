@@ -1,24 +1,40 @@
-import { HomwView } from "./viewMain";
+import { rpsStart } from '../games/index.js';
 import { AppState } from './modell.js';
+import { HomeView } from './viewMain.js';
 
-const globalState = new AppState();
-const app = document.getElementById('app');
+const root = document.getElementById("app");
+const appState = new AppState();
 
 export function initApp() {
-  globalState.subscribe(render);
-  globalState.setView('home');
-  render(globalState.view);
+  appState.subscribe(render);
+  render();
+
+  events();
 }
 
-function render(view) {
+function render() {
+  const view = appState.getView();
+  root.innerHTML = "";
+
   switch (view) {
     case 'home':
-      app.innerHTML = HomwView();
+      root.innerHTML = HomeView();
       break;
     case 'rps':
-      // rpsStart(app, globalState);
+      rpsStart(root);
       break;
     default:
-      app.innerHTML = HomwView();
+      console.error("View not found");
+      break;
   }
+}
+
+function events() {
+  document.addEventListener("click", (e) => {
+    const { target } = e;
+
+    if (target.matches("#rps")) {
+      appState.setView("rps");
+    }
+  })
 }

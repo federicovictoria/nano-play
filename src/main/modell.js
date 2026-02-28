@@ -3,7 +3,7 @@
 export class AppState {
   static instance = null;
   
-  view = ''
+  view = 'home'
   subscribers = []
   
   constructor() {
@@ -11,6 +11,10 @@ export class AppState {
       return AppState.instance;
     }
     return AppState.instance = this;
+  }
+  
+  getView() {
+    return this.view;
   }
   
   setView ( view ) {
