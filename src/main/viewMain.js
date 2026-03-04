@@ -4,13 +4,13 @@ function cardInactive() {
   const card = document.createElement("div");
   card.classList.add("card-inactive");
   card.innerHTML = `
-    <img src="/src/assets/icons/ask.svg" alt="Coming soon">
+    <img src="./src/assets/icons/ask.svg" alt="Coming soon">
     <p>Coming Soon</p>
   `;
   return card.outerHTML;
 }
 
-function cardActive({ title, id, img = '/src/assets/imgs/miniatura-1.png' }) {
+function cardActive({ title, id, img  }) {
   const card = document.createElement("article");
   card.classList.add("home-card");
   card.innerHTML = `
@@ -35,7 +35,7 @@ export function HomeView() {
       <h1 class="logo-text">Nano Play</h1>
     </div>
     <a href="https://github.com/federicovictoria/nano-play" class="github-link" aria-label="Nano Play on GitHub">
-      <img src="/src/assets/icons/icon-github.svg" alt="GitHub Logo">
+      <img src="./src/assets/icons/icon-github.svg" alt="GitHub Logo">
     </a>`;
   view.appendChild(viewHeader);
 
@@ -50,7 +50,7 @@ export function HomeView() {
     </div>
 
     <section class="home-section-grid">
-      ${cardActive({ title: "Reaction Time", id: "rps" })}
+      ${cardActive({ title: "Reaction Time", id: "rps", img: "./src/assets/imgs/miniatura-1.png" })}
       ${cardInactive()}
       ${cardInactive()}
       ${cardInactive()}
@@ -66,20 +66,19 @@ export function HomeView() {
       <small class="muted">Built for quick practice and learning</small>
     </div>
 
-    <nav class="footer-nav" aria-label="Footer navigation">
-      <a href="/about">About</a>
-      <a href="/privacy">Privacy</a>
-      <a href="/contact">Contact</a>
-    </nav>
-
     <div class="footer-right social-links">
-      <a href="https://www.linkedin.com/in/federicovictoria/" class="linkedin-link" aria-label="LinkedIn">
-        <img src="/src/assets/icons/linkedin.svg" alt="LinkedIn Logo">
+      <a href="https://www.linkedin.com/in/federico-victoria-401a873ab" class="linkedin-link" aria-label="LinkedIn">
+        <img src="./src/assets/icons/linkedin.svg" alt="LinkedIn Logo">
       </a>
-      <a href="https://github.com/federicovictoria/nano-play" class="github-link" aria-label="GitHub">
-        <img src="/src/assets/icons/icon-github.svg" alt="GitHub Logo">
+      <a href="https://github.com/federicovictoria" class="github-link" aria-label="GitHub">
+        <img src="./src/assets/icons/icon-github.svg" alt="GitHub Logo">
       </a>
     </div>
+
+
+    <nav class="footer-nav" aria-label="Footer navigation">
+    </nav>
+
   `;
 
   view.appendChild(viewFooter);
