@@ -33,8 +33,13 @@ function events() {
   document.addEventListener("click", (e) => {
     const { target } = e;
 
+    if (target.matches("#back-button")) {
+      appState.setView("home");
+    }
+
     if (target.matches("#rps")) {
       appState.setView("rps");
     }
+
   })
 }

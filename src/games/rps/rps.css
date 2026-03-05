@@ -1,0 +1,37 @@
+
+.rpsSectionScore {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.rpsSectionScore h2 {
+    margin: 12px 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+.rpsScore {
+    display: flex;
+    justify-content: space-between;
+    gap: 48px;
+}
+
+.rpsScorePlayer,.rpsScoreBot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 280px;
+    padding: 12px;
+    background-color: #21262e;
+    border-radius: 8px;
+    gap: 16px;
+    p {
+        font-size: 24px;
+        font-weight: bold;
+        color: var(--text-color);
+    }
+}
